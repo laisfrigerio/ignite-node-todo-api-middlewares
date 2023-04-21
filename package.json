@@ -1,9 +1,13 @@
 {
-  "name": "desafio",
+  "name": "ignite-node-todo-api-middlewares",
   "version": "1.0.0",
   "main": "src/server.js",
   "license": "MIT",
   "scripts": {
+    "docker:build": "docker build . -t ignite-node-todo-api-middlewares",
+    "docker:run": "docker run -p 127.0.0.1:49128:3333 -d ignite-node-todo-api-middlewares",
+    "docker:test": "docker run -e CI=true ignite-node-todo-api-middlewares npm run test",
+    "prettier:fix": "npx prettier --write .",
     "dev": "nodemon",
     "test": "jest"
   },
@@ -15,6 +19,7 @@
   "devDependencies": {
     "jest": "^26.6.3",
     "nodemon": "^2.0.7",
+    "prettier": "^2.8.7",
     "supertest": "^6.1.3"
   }
 }
